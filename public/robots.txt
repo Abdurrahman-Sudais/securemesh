@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://securemesh.space/sitemap.xml
