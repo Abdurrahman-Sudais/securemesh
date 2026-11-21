@@ -9,6 +9,8 @@ const site = {
   email: 'david@securemesh.space',
   team: [
     {name: 'David Emeka', role: 'Founder', initials: 'DE', bio: 'David founded SecureMesh after seeing security teams lose real incidents in a flood of duplicate, unexplained alerts. David leads product, customers and every pilot, with a focus on read-only, analyst-first tooling.', focus: ['Product', 'Alert triage', 'Customer pilots']},
+    {name: "Aisha Garba", role: "Co-founder", initials: "AG", bio: "Aisha leads customer success at SecureMesh: onboarding security teams and managed service providers, shaping the analyst triage workflow and turning analyst feedback into product changes.", focus: ["Security operations", "Pilot onboarding", "Analyst workflow"]},
+    {name: "Femi Adeyinka", role: "CTO", initials: "FA", bio: "Femi leads engineering: read-only ingestion of authorised findings, correlation and priority scoring, evidence summaries, case management and the AWS platform it runs on.", focus: ["Platform architecture", "Detection and correlation", "AWS infrastructure"]},
   ],
   app: {
     title: 'Triage console',

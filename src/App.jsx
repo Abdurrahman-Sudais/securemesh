@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {flushSync} from 'react-dom';
 import site from './content.js';
+import {Count, Cycle, Marquee, Stats, Words} from './Flow.jsx';
 import {findings, hhmm} from './data.js';
 import {correlate} from './engine.js';
 import {ACROSS, SERVICES, STAGES, WHY} from './aws.js';
@@ -63,6 +64,9 @@ function Split({text, as: Tag = 'h1', className = ''}) {
   return <Tag className={`split ${className}`} data-r>{text.split(' ').map((w, i) => <React.Fragment key={i}><span className="w" style={{'--i': i}}><span>{w}</span></span>{' '}</React.Fragment>)}</Tag>;
 }
 
+const CYCLE = ["enterprise IT teams", "SaaS companies", "managed security providers"];
+const MQ = ["Enterprise IT", "SaaS security teams", "Managed security providers", "Amazon GuardDuty", "AWS Security Hub", "Amazon CloudWatch", "Correlation", "Transparent priority", "Evidence summaries", "Case management", "Audit reporting", "Read-only by design"];
+
 function Hero() {
   return (
     <section className="hero">
@@ -70,11 +74,12 @@ function Hero() {
         <p className="kicker" data-r><span className="dot" aria-hidden="true" /> Defensive monitoring · read-only · analyst-reviewed</p>
         <Split text="Security alerts that deserve attention." />
         <p className="lede" data-r style={{'--d': '200ms'}}>SecureMesh is a proposed platform that consolidates authorised security findings, correlates them into incidents and drafts evidence-based summaries — so analysts spend their time on what matters, and decide every response.</p>
+        <p className="fcy" data-r style={{'--d': '200ms'}}><Cycle lead="Built for" items={CYCLE} /></p>
         <div className="cta" data-r style={{'--d': '300ms'}}><a className="btn" href="#demo" data-magnetic data-cursor="Demo">Request a demo</a><a className="btn ghost" href="/app" data-cursor="Open">Try the triage console</a></div>
         <dl className="hero-stats" data-r style={{'--d': '400ms'}}>
-          <div><dt>Findings in</dt><dd>{findings.length}</dd></div>
-          <div><dt>Incidents out</dt><dd>{INC.length}</dd></div>
-          <div><dt>Need attention now</dt><dd className="hot">{P1}</dd></div>
+          <div><dt>Findings in</dt><dd><Count to={findings.length} /></dd></div>
+          <div><dt>Incidents out</dt><dd><Count to={INC.length} /></dd></div>
+          <div><dt>Need attention now</dt><dd className="hot"><Count to={P1} /></dd></div>
         </dl>
         <p className="fine">Sample day from the prototype, synthetic data.</p>
       </div>
@@ -211,8 +216,7 @@ function Technology() {
 }
 
 function Team() {
-  const p = site.team[0];
-  return <section className="sec" id="team" aria-labelledby="team-title"><div className="team frame" data-r><span className="av" aria-hidden="true">{p.initials}</span><div><p className="tag">// founder</p><h2 id="team-title">{p.name}</h2><p>{p.bio}</p><ul className="tags">{p.focus.map((f) => <li key={f}>{f}</li>)}</ul></div></div></section>;
+  return <section className="sec" id="team" aria-labelledby="team-title"><div className="team-head"><p className="tag">// founding team</p><h2 id="team-title">The people building {site.name}.</h2></div><div className="team-list">{site.team.map((p, i) => (<div key={p.name} style={{'--d': `${i * 90}ms`}} className="team frame" data-r><span className="av" aria-hidden="true">{p.initials}</span><div><p className="tag">// {p.role.toLowerCase()}</p><h3 className="tname">{p.name}</h3><p>{p.bio}</p><ul className="tags">{p.focus.map((f) => <li key={f}>{f}</li>)}</ul></div></div>))}</div></section>;
 }
 
 function Demo() {
@@ -248,7 +252,7 @@ function Footer() {
   );
 }
 
-function Home() { return (<><Hero /><Signal /><Capabilities /><Priority /><Boundaries /><Who /><Pricing /><Technology /><Team /><Demo /><Faq /><Contact /></>); }
+function Home() { return (<><Hero /><Marquee items={MQ} label="Who and what it is built for" /><Signal /><Capabilities /><Priority /><Boundaries /><Who /><Pricing /><Technology /><Team /><Demo /><Faq /><Contact /></>); }
 
 const LEGAL = {
   privacy: ['Privacy notice', [['This website', 'SecureMesh is a proposed product. This website and the triage console run in your browser on synthetic data.'], ['Triage console', 'Your changes are kept in your browser’s local storage (key securemesh-console-v1) and never leave your device.'], ['Forms', `Until a form service is connected, the demo and contact forms open a pre-filled email to ${site.email}; nothing is sent until you send it. Please do not send logs, credentials or security findings through the forms.`], ['Cookies & analytics', 'None.']]],
