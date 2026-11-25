@@ -5,8 +5,8 @@ const site = {
   slug: 'securemesh',
   tagline: 'Security alerts that deserve attention.',
   about: 'SecureMesh is a proposed defensive security monitoring platform that would help security teams consolidate authorised security findings, prioritise alerts and understand potential incidents. Analysts review every summary and decide every response.',
-  url: 'https://securemesh.space',
-  email: 'david@securemesh.space',
+  url: 'https://securemesh.live',
+  email: 'david@securemesh.live',
   team: [
     {name: 'David Emeka', role: 'Founder', initials: 'DE', bio: 'David founded SecureMesh after seeing security teams lose real incidents in a flood of duplicate, unexplained alerts. David leads product, customers and every pilot, with a focus on read-only, analyst-first tooling.', focus: ['Product', 'Alert triage', 'Customer pilots']},
     {name: "Aisha Garba", role: "Co-founder", initials: "AG", bio: "Aisha leads customer success at SecureMesh: onboarding security teams and managed service providers, shaping the analyst triage workflow and turning analyst feedback into product changes.", focus: ["Security operations", "Pilot onboarding", "Analyst workflow"]},

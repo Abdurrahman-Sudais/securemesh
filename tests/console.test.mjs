@@ -43,5 +43,5 @@ test('triage needs the right role and a reason; closing a case needs the lead', 
 
 test('founder and contact', () => {
   assert.equal(site.team[0].name, 'David Emeka');
-  assert.equal(site.email, 'david@securemesh.space');
+  assert.equal(site.email, 'david@securemesh.live');
 });

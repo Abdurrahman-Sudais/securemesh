@@ -4,7 +4,7 @@
 
 SecureMesh is a proposed defensive security monitoring platform for enterprise IT departments, SaaS companies and managed security service providers. It would consolidate authorised security findings, correlate them into incidents, prioritise alerts and draft evidence-based summaries for analyst review. It is read-only: security professionals evaluate findings and decide every response.
 
-> SecureMesh is a proposed product. Features, integrations and AWS services are planned until implemented and verified. Pricing is illustrative, and the prototype uses fictional data. Founder: **David Emeka**. Website: `securemesh.space` · contact: `david@securemesh.space`.
+> SecureMesh is a proposed product. Features, integrations and AWS services are planned until implemented and verified. Pricing is illustrative, and the prototype uses fictional data. Founder: **David Emeka**. Website: `securemesh.live` · contact: `david@securemesh.live`.
 
 ## Design
 
